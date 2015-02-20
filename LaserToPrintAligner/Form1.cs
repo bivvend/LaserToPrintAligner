@@ -17,6 +17,12 @@ namespace LaserToPrintAligner
         double XPitch = 0.0d;
         double YPitch = 0.0d;
         string Filename = "Blank";
+        string Path = "C:";
+
+        double X1 = 0.0d;
+        double Y1 = 5.6d;
+        double X2 = 0.0d;
+        double Y2 = -5.6d;
 
         public Form1()
         {
@@ -46,6 +52,12 @@ namespace LaserToPrintAligner
             double.TryParse(textBoxYPitch.Text, out YPitch);
 
             Filename = textBoxFileName.Text;
+            Path = textBoxFileLocation.Text;
+
+            double.TryParse(textBoxPointX1.Text, out X1);
+            double.TryParse(textBoxPointY1.Text, out Y1);
+            double.TryParse(textBoxPointX2.Text, out X2);
+            double.TryParse(textBoxPointY2.Text, out Y2);
             
             //read in points to data
             for (int N = 0; N < 15; N++)
@@ -58,38 +70,38 @@ namespace LaserToPrintAligner
                             double.TryParse(textBoxX1.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY1.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr1.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr1.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr1.Text, out Points[N].YRemap);
 
                             break;
                         case 1:
                             double.TryParse(textBoxX2.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY2.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr2.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr2.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr2.Text, out Points[N].YRemap);
                             break;
                         case 2:
                             double.TryParse(textBoxX3.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY3.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr3.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr3.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr3.Text, out Points[N].YRemap);
                             break;
                         case 3:
                            double.TryParse(textBoxX4.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY4.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr4.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr4.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr4.Text, out Points[N].YRemap);
                             break;
                         case 4:
                             double.TryParse(textBoxX5.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY5.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr5.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr5.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr5.Text, out Points[N].YRemap);
                             break;
                         case 5:
                             double.TryParse(textBoxX6.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY6.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr6.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr6.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr6.Text, out Points[N].YRemap);
                             break;
                         case 6:
                             double.TryParse(textBoxX7.Text, out Points[N].XMeasured);
@@ -101,7 +113,7 @@ namespace LaserToPrintAligner
                             double.TryParse(textBoxX8.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY8.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr8.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr8.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr8.Text, out Points[N].YRemap);
                             break;
                         case 8:
                             double.TryParse(textBoxX9.Text, out Points[N].XMeasured);
@@ -119,31 +131,31 @@ namespace LaserToPrintAligner
                             double.TryParse(textBoxX11.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY11.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr11.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr11.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr11.Text, out Points[N].YRemap);
                             break;
                         case 11:
                             double.TryParse(textBoxX12.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY12.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr12.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr12.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr12.Text, out Points[N].YRemap);
                             break;
                         case 12:
                            double.TryParse(textBoxX13.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY13.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr13.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr13.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr13.Text, out Points[N].YRemap);
                             break;
                         case 13:
                             double.TryParse(textBoxX14.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY14.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr14.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr14.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr14.Text, out Points[N].YRemap);
                             break;
                         case 14:
                             double.TryParse(textBoxX15.Text, out Points[N].XMeasured);
                             double.TryParse(textBoxY15.Text, out Points[N].YMeasured);
                             double.TryParse(textBoxXr15.Text, out Points[N].XRemap);
-                            double.TryParse(textBoxYr15.Text, out Points[N].XRemap);
+                            double.TryParse(textBoxYr15.Text, out Points[N].YRemap);
                             break;
 
                         default:
@@ -165,7 +177,13 @@ namespace LaserToPrintAligner
             textBoxXPitch.Text = XPitch.ToString();
             textBoxYPitch.Text = YPitch.ToString();
             textBoxFileName.Text = Filename;
-          
+            textBoxFileLocation.Text = Path;
+
+            textBoxPointX1.Text = X1.ToString();
+            textBoxPointX2.Text = X2.ToString();
+            textBoxPointY1.Text = Y1.ToString();
+            textBoxPointY2.Text = Y2.ToString();
+
             for(int N=0; N<15; N++)
                 try
                 {
@@ -441,7 +459,60 @@ namespace LaserToPrintAligner
 
         private void buttonWriteOffsets_Click(object sender, EventArgs e)
         {
+            buttonCalculateOffsets.PerformClick();
+            CopyTextToData();
+            FileStream fs;
+            try
+            {
+                for (int N = 0; N < 15; N++)
+                {
+                    if (N > 9)
+                        fs = File.Open(Path + @"\" + Filename + "X0" + (N + 1).ToString() + "Y001" + ".dxf", FileMode.Create);
+                    else
+                        fs = File.Open(Path + @"\" + Filename + "X00" + (N + 1).ToString() + "Y001" + ".dxf", FileMode.Create);
 
+
+
+
+
+                    StreamWriter writer = new StreamWriter(fs);
+
+                    //WRITE HEADER
+
+                    writer.WriteLine("0");
+                    writer.WriteLine("SECTION");
+                    writer.WriteLine("2");
+                    writer.WriteLine("ENTITIES");
+                    writer.WriteLine("0");
+
+                    //WRITE LINE
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((X1 + Points[N].XRemap).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((X2 + Points[N].XRemap).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((Y1 + Points[N].YRemap).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((Y2 + Points[N].YRemap).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE FOOTER
+                    writer.WriteLine("ENDSEC");
+                    writer.WriteLine("0");
+                    writer.WriteLine("EOF");
+
+                    writer.Close();
+                    fs.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("File error - check not open elsewhere");
+            }
+        
         }
 
                

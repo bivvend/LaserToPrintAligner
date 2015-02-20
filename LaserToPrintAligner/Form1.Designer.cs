@@ -137,6 +137,14 @@
             this.buttonWriteOffsets = new System.Windows.Forms.Button();
             this.textBoxFileName = new System.Windows.Forms.TextBox();
             this.label38 = new System.Windows.Forms.Label();
+            this.textBoxPointX1 = new System.Windows.Forms.TextBox();
+            this.textBoxPointY1 = new System.Windows.Forms.TextBox();
+            this.textBoxPointX2 = new System.Windows.Forms.TextBox();
+            this.textBoxPointY2 = new System.Windows.Forms.TextBox();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -940,14 +948,14 @@
             // 
             // textBoxXPitch
             // 
-            this.textBoxXPitch.Location = new System.Drawing.Point(94, 140);
+            this.textBoxXPitch.Location = new System.Drawing.Point(105, 151);
             this.textBoxXPitch.Name = "textBoxXPitch";
             this.textBoxXPitch.Size = new System.Drawing.Size(89, 20);
             this.textBoxXPitch.TabIndex = 3;
             // 
             // textBoxYPitch
             // 
-            this.textBoxYPitch.Location = new System.Drawing.Point(94, 166);
+            this.textBoxYPitch.Location = new System.Drawing.Point(105, 177);
             this.textBoxYPitch.Name = "textBoxYPitch";
             this.textBoxYPitch.Size = new System.Drawing.Size(89, 20);
             this.textBoxYPitch.TabIndex = 3;
@@ -955,7 +963,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(11, 143);
+            this.label36.Location = new System.Drawing.Point(22, 154);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(66, 13);
             this.label36.TabIndex = 6;
@@ -964,7 +972,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(11, 169);
+            this.label37.Location = new System.Drawing.Point(22, 180);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(66, 13);
             this.label37.TabIndex = 6;
@@ -1019,7 +1027,7 @@
             // 
             // buttonWriteOffsets
             // 
-            this.buttonWriteOffsets.Location = new System.Drawing.Point(238, 154);
+            this.buttonWriteOffsets.Location = new System.Drawing.Point(376, 158);
             this.buttonWriteOffsets.Name = "buttonWriteOffsets";
             this.buttonWriteOffsets.Size = new System.Drawing.Size(80, 43);
             this.buttonWriteOffsets.TabIndex = 12;
@@ -1043,11 +1051,83 @@
             this.label38.TabIndex = 14;
             this.label38.Text = "Root of Filenames";
             // 
+            // textBoxPointX1
+            // 
+            this.textBoxPointX1.Location = new System.Drawing.Point(275, 133);
+            this.textBoxPointX1.Name = "textBoxPointX1";
+            this.textBoxPointX1.Size = new System.Drawing.Size(81, 20);
+            this.textBoxPointX1.TabIndex = 15;
+            // 
+            // textBoxPointY1
+            // 
+            this.textBoxPointY1.Location = new System.Drawing.Point(275, 158);
+            this.textBoxPointY1.Name = "textBoxPointY1";
+            this.textBoxPointY1.Size = new System.Drawing.Size(81, 20);
+            this.textBoxPointY1.TabIndex = 15;
+            // 
+            // textBoxPointX2
+            // 
+            this.textBoxPointX2.Location = new System.Drawing.Point(275, 184);
+            this.textBoxPointX2.Name = "textBoxPointX2";
+            this.textBoxPointX2.Size = new System.Drawing.Size(81, 20);
+            this.textBoxPointX2.TabIndex = 15;
+            // 
+            // textBoxPointY2
+            // 
+            this.textBoxPointY2.Location = new System.Drawing.Point(275, 210);
+            this.textBoxPointY2.Name = "textBoxPointY2";
+            this.textBoxPointY2.Size = new System.Drawing.Size(81, 20);
+            this.textBoxPointY2.TabIndex = 15;
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(246, 136);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(20, 13);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "X1";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(246, 161);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(20, 13);
+            this.label40.TabIndex = 16;
+            this.label40.Text = "Y1";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(246, 187);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(20, 13);
+            this.label41.TabIndex = 16;
+            this.label41.Text = "X2";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(246, 213);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(20, 13);
+            this.label42.TabIndex = 16;
+            this.label42.Text = "Y2";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1197, 386);
+            this.ClientSize = new System.Drawing.Size(1199, 363);
+            this.Controls.Add(this.label42);
+            this.Controls.Add(this.label41);
+            this.Controls.Add(this.label40);
+            this.Controls.Add(this.label39);
+            this.Controls.Add(this.textBoxPointY2);
+            this.Controls.Add(this.textBoxPointX2);
+            this.Controls.Add(this.textBoxPointY1);
+            this.Controls.Add(this.textBoxPointX1);
             this.Controls.Add(this.label38);
             this.Controls.Add(this.textBoxFileName);
             this.Controls.Add(this.buttonWriteOffsets);
@@ -1230,6 +1310,14 @@
         private System.Windows.Forms.Button buttonWriteOffsets;
         private System.Windows.Forms.TextBox textBoxFileName;
         private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox textBoxPointX1;
+        private System.Windows.Forms.TextBox textBoxPointY1;
+        private System.Windows.Forms.TextBox textBoxPointX2;
+        private System.Windows.Forms.TextBox textBoxPointY2;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label42;
     }
 }
 
