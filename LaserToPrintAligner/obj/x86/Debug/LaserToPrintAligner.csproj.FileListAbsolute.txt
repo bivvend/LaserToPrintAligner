@@ -1,0 +1,9 @@
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\bin\Debug\LaserToPrintAligner.exe
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\bin\Debug\LaserToPrintAligner.pdb
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\ResolveAssemblyReference.cache
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.Form1.resources
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.Properties.Resources.resources
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\GenerateResource.read.1.tlog
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\GenerateResource.write.1.tlog
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.exe
+\\MSOLV-File-01\UserShares\Simon.Henley\My Documents\Programming\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.pdb
