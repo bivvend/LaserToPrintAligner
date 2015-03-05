@@ -19,10 +19,12 @@ namespace LaserToPrintAligner
         string Filename = "Blank";
         string Path = "C:";
 
+        string RowNumber = "001";
+
         double X1 = 0.0d;
-        double Y1 = 5.6d;
+        double Y1 = 5.5d;
         double X2 = 0.0d;
-        double Y2 = -5.6d;
+        double Y2 = -5.5d;
 
         public Form1()
         {
@@ -53,6 +55,8 @@ namespace LaserToPrintAligner
 
             Filename = textBoxFileName.Text;
             Path = textBoxFileLocation.Text;
+
+            RowNumber = textBox1.Text;
 
             double.TryParse(textBoxPointX1.Text, out X1);
             double.TryParse(textBoxPointY1.Text, out Y1);
@@ -178,6 +182,8 @@ namespace LaserToPrintAligner
             textBoxYPitch.Text = YPitch.ToString();
             textBoxFileName.Text = Filename;
             textBoxFileLocation.Text = Path;
+
+            textBox1.Text = RowNumber;
 
             textBoxPointX1.Text = X1.ToString();
             textBoxPointX2.Text = X2.ToString();
@@ -418,8 +424,8 @@ namespace LaserToPrintAligner
                 X = Points[N].XMeasured;
                 Y = Points[N].YMeasured;
 
-                Points[N].XRemap = X - N * XPitch;
-                Points[N].YRemap = Y - N * YPitch;
+                Points[N].XRemap = (X - N * XPitch)*1000.0d;
+                Points[N].YRemap = (Y - N * YPitch)*1000.0d;
 
 
                 if (Points[N].XRemap < 0.00001d && Points[N].XRemap > -0.00001d)
@@ -459,7 +465,7 @@ namespace LaserToPrintAligner
 
         private void buttonWriteOffsets_Click(object sender, EventArgs e)
         {
-            buttonCalculateOffsets.PerformClick();
+            //buttonCalculateOffsets.PerformClick();
             CopyTextToData();
             FileStream fs;
             try
@@ -467,9 +473,9 @@ namespace LaserToPrintAligner
                 for (int N = 0; N < 15; N++)
                 {
                     if (N > 9)
-                        fs = File.Open(Path + @"\" + Filename + "X0" + (N + 1).ToString() + "Y001" + ".dxf", FileMode.Create);
+                        fs = File.Open(Path + @"\" + Filename + "X0" + (N + 1).ToString() + "Y"+RowNumber + ".dxf", FileMode.Create);
                     else
-                        fs = File.Open(Path + @"\" + Filename + "X00" + (N + 1).ToString() + "Y001" + ".dxf", FileMode.Create);
+                        fs = File.Open(Path + @"\" + Filename + "X00" + (N + 1).ToString() + "Y"+RowNumber + ".dxf", FileMode.Create);
 
 
 
@@ -490,13 +496,13 @@ namespace LaserToPrintAligner
                     writer.WriteLine("8");
                     writer.WriteLine("0");
                     writer.WriteLine("10");
-                    writer.WriteLine((X1 + Points[N].XRemap).ToString());
+                    writer.WriteLine((X1 + Points[N].XRemap/1000.0d).ToString());
                     writer.WriteLine("11");
-                    writer.WriteLine((X2 + Points[N].XRemap).ToString());
+                    writer.WriteLine((X2 + Points[N].XRemap/1000.0d).ToString());
                     writer.WriteLine("20");
-                    writer.WriteLine((Y1 + Points[N].YRemap).ToString());
+                    writer.WriteLine((Y1 + Points[N].YRemap/1000.0d).ToString());
                     writer.WriteLine("21");
-                    writer.WriteLine((Y2 + Points[N].YRemap).ToString());
+                    writer.WriteLine((Y2 + Points[N].YRemap/1000.0d).ToString());
                     writer.WriteLine("0");
 
                     //WRITE FOOTER

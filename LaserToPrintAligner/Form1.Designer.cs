@@ -145,6 +145,8 @@
             this.label40 = new System.Windows.Forms.Label();
             this.label41 = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -742,18 +744,18 @@
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(6, 275);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(70, 13);
+            this.label19.Size = new System.Drawing.Size(68, 13);
             this.label19.TabIndex = 1;
-            this.label19.Text = "Offset X (mm)";
+            this.label19.Text = "Offset X (um)";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.Location = new System.Drawing.Point(5, 301);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(70, 13);
+            this.label20.Size = new System.Drawing.Size(68, 13);
             this.label20.TabIndex = 1;
-            this.label20.Text = "Offset Y (mm)";
+            this.label20.Text = "Offset Y (um)";
             // 
             // label21
             // 
@@ -1010,7 +1012,7 @@
             // 
             // buttonSelectFiles
             // 
-            this.buttonSelectFiles.Location = new System.Drawing.Point(800, 144);
+            this.buttonSelectFiles.Location = new System.Drawing.Point(799, 136);
             this.buttonSelectFiles.Name = "buttonSelectFiles";
             this.buttonSelectFiles.Size = new System.Drawing.Size(73, 34);
             this.buttonSelectFiles.TabIndex = 10;
@@ -1020,7 +1022,7 @@
             // 
             // textBoxFileLocation
             // 
-            this.textBoxFileLocation.Location = new System.Drawing.Point(879, 152);
+            this.textBoxFileLocation.Location = new System.Drawing.Point(878, 144);
             this.textBoxFileLocation.Name = "textBoxFileLocation";
             this.textBoxFileLocation.Size = new System.Drawing.Size(236, 20);
             this.textBoxFileLocation.TabIndex = 11;
@@ -1037,7 +1039,7 @@
             // 
             // textBoxFileName
             // 
-            this.textBoxFileName.Location = new System.Drawing.Point(879, 194);
+            this.textBoxFileName.Location = new System.Drawing.Point(879, 174);
             this.textBoxFileName.Name = "textBoxFileName";
             this.textBoxFileName.Size = new System.Drawing.Size(235, 20);
             this.textBoxFileName.TabIndex = 13;
@@ -1045,7 +1047,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(781, 197);
+            this.label38.Location = new System.Drawing.Point(781, 177);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(92, 13);
             this.label38.TabIndex = 14;
@@ -1115,11 +1117,28 @@
             this.label42.TabIndex = 16;
             this.label42.Text = "Y2";
             // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(795, 210);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(69, 13);
+            this.label43.TabIndex = 17;
+            this.label43.Text = "Row Number";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(879, 206);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(235, 20);
+            this.textBox1.TabIndex = 13;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1199, 363);
+            this.Controls.Add(this.label43);
             this.Controls.Add(this.label42);
             this.Controls.Add(this.label41);
             this.Controls.Add(this.label40);
@@ -1129,6 +1148,7 @@
             this.Controls.Add(this.textBoxPointY1);
             this.Controls.Add(this.textBoxPointX1);
             this.Controls.Add(this.label38);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.textBoxFileName);
             this.Controls.Add(this.buttonWriteOffsets);
             this.Controls.Add(this.textBoxFileLocation);
@@ -1318,6 +1338,8 @@
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
