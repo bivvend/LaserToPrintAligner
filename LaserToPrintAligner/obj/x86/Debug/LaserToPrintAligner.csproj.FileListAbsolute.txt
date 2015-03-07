@@ -14,3 +14,12 @@ D:\Github\LaserToPrintAligner\LaserToPrintAligner\bin\Debug\LaserToPrintAligner.
 D:\Github\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.Form1.resources
 D:\Github\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.Properties.Resources.resources
 D:\Github\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.csproj.GenerateResource.Cache
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.exe
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.pdb
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\bin\Debug\LaserToPrintAligner.exe
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\bin\Debug\LaserToPrintAligner.pdb
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.Form1.resources
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\LaserToPrintAligner.Properties.Resources.resources
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\WinPython\Programs\LaserToPrintAligner\LaserToPrintAligner\obj\x86\Debug\GenerateResource.write.1.tlog

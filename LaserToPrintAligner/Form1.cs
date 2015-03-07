@@ -17,9 +17,12 @@ namespace LaserToPrintAligner
         double XPitch = 0.0d;
         double YPitch = 0.0d;
         string Filename = "Blank";
+        string VerticalFilename = "Blank";
+        string InsulatorFilename = "Blank";
+        string HorizontalFilename = "Blank";
         string Path = "C:";
 
-        string RowNumber = "001";
+        string RowNumber = "006";
 
         double X1 = 0.0d;
         double Y1 = 5.5d;
@@ -54,6 +57,10 @@ namespace LaserToPrintAligner
             double.TryParse(textBoxYPitch.Text, out YPitch);
 
             Filename = textBoxFileName.Text;
+            VerticalFilename = textBoxVerticalFilename.Text;
+            InsulatorFilename = textBoxInsulatorFilename.Text;
+            HorizontalFilename = textBoxHorizontalFilename.Text;
+
             Path = textBoxFileLocation.Text;
 
             RowNumber = textBox1.Text;
@@ -181,6 +188,10 @@ namespace LaserToPrintAligner
             textBoxXPitch.Text = XPitch.ToString();
             textBoxYPitch.Text = YPitch.ToString();
             textBoxFileName.Text = Filename;
+            textBoxVerticalFilename.Text = VerticalFilename;
+            textBoxInsulatorFilename.Text = InsulatorFilename;
+            textBoxHorizontalFilename.Text = HorizontalFilename;
+
             textBoxFileLocation.Text = Path;
 
             textBox1.Text = RowNumber;
@@ -472,13 +483,10 @@ namespace LaserToPrintAligner
             {
                 for (int N = 0; N < 15; N++)
                 {
-                    if (N > 9)
+                    if (N > 8)
                         fs = File.Open(Path + @"\" + Filename + "X0" + (N + 1).ToString() + "Y"+RowNumber + ".dxf", FileMode.Create);
                     else
                         fs = File.Open(Path + @"\" + Filename + "X00" + (N + 1).ToString() + "Y"+RowNumber + ".dxf", FileMode.Create);
-
-
-
 
 
                     StreamWriter writer = new StreamWriter(fs);
@@ -520,6 +528,282 @@ namespace LaserToPrintAligner
             }
         
         }
+
+        private void buttonWriteVerticalDXF_Click(object sender, EventArgs e)
+        {
+            CopyTextToData();
+            FileStream fs;
+            try
+            {
+                for (int N = 0; N < 15; N++)
+                {
+                    if (N > 8)
+                        fs = File.Open(Path + @"\" + VerticalFilename + "X0" + (N + 1).ToString() + "Y" + RowNumber + ".dxf", FileMode.Create);
+                    else
+                        fs = File.Open(Path + @"\" + VerticalFilename + "X00" + (N + 1).ToString() + "Y" + RowNumber + ".dxf", FileMode.Create);
+
+                    StreamWriter writer = new StreamWriter(fs);
+
+                    //WRITE HEADER
+
+                    writer.WriteLine("0");
+                    writer.WriteLine("SECTION");
+                    writer.WriteLine("2");
+                    writer.WriteLine("ENTITIES");
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 1
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-1.9535 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-1.9535 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((8.7594 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-7.1506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 2
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((1.9535 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((1.9535 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((8.7594 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-7.1506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE FOOTER
+                    writer.WriteLine("ENDSEC");
+                    writer.WriteLine("0");
+                    writer.WriteLine("EOF");
+
+                    writer.Close();
+                    fs.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("File error - check not open elsewhere");
+            }
+
+        }
+
+        private void buttonWriteInsulatorDXFs_Click(object sender, EventArgs e)
+        {
+            CopyTextToData();
+            FileStream fs;
+            try
+            {
+                for (int N = 0; N < 15; N++)
+                {
+                    if (N > 8)
+                        fs = File.Open(Path + @"\" + InsulatorFilename + "X0" + (N + 1).ToString() + "Y" + RowNumber + ".dxf", FileMode.Create);
+                    else
+                        fs = File.Open(Path + @"\" + InsulatorFilename + "X00" + (N + 1).ToString() + "Y" + RowNumber + ".dxf", FileMode.Create);
+
+                    StreamWriter writer = new StreamWriter(fs);
+
+                    //WRITE HEADER
+
+                    writer.WriteLine("0");
+                    writer.WriteLine("SECTION");
+                    writer.WriteLine("2");
+                    writer.WriteLine("ENTITIES");
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 1
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-2.0035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-2.0035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((-6.8506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-7.9506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 2
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-1.9035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-1.9035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((-6.8506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-7.9506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 3
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((1.9035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((1.9035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((-6.8506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-7.9506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 4
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((2.0035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((2.0035 + Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((-6.8506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-7.9506 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE FOOTER
+                    writer.WriteLine("ENDSEC");
+                    writer.WriteLine("0");
+                    writer.WriteLine("EOF");
+
+                    writer.Close();
+                    fs.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("File error - check not open elsewhere");
+            }
+           
+        }
+
+        private void buttonWriteHorizontalDXfs_Click(object sender, EventArgs e)
+        {
+            CopyTextToData();
+            FileStream fs;
+            int YIndex = 1;
+            try
+            {
+                for (int N = 0; N < 15; N++)
+                {
+
+                    YIndex = 16 - (N + 1);
+
+                    if (YIndex > 9)
+                        fs = File.Open(Path + @"\" + HorizontalFilename + "X" + RowNumber + "Y0" + YIndex.ToString() + ".dxf", FileMode.Create);
+                    else
+                        fs = File.Open(Path + @"\" + HorizontalFilename + "X" + RowNumber + "Y00" + YIndex.ToString() + ".dxf", FileMode.Create);
+
+                    StreamWriter writer = new StreamWriter(fs);
+
+                    //WRITE HEADER
+
+                    writer.WriteLine("0");
+                    writer.WriteLine("SECTION");
+                    writer.WriteLine("2");
+                    writer.WriteLine("ENTITIES");
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 1
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((8.6594 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((8.6594 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((1.9535 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-2.0535 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 2
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-7.4756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-7.4756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((2.6285 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-5.7855 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 3
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-7.3756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-7.3756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((2.6285 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((-5.7855 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 4
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-7.4756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-7.4756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((3.9570 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((2.1285 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE LINE 5
+                    writer.WriteLine("LINE");
+                    writer.WriteLine("8");
+                    writer.WriteLine("0");
+                    writer.WriteLine("10");
+                    writer.WriteLine((-7.3756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("11");
+                    writer.WriteLine((-7.3756 + Points[N].YRemap / 1000.0d).ToString());
+                    writer.WriteLine("20");
+                    writer.WriteLine((3.9570 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("21");
+                    writer.WriteLine((2.1285 - Points[N].XRemap / 1000.0d).ToString());
+                    writer.WriteLine("0");
+
+                    //WRITE FOOTER
+                    writer.WriteLine("ENDSEC");
+                    writer.WriteLine("0");
+                    writer.WriteLine("EOF");
+
+                    writer.Close();
+                    fs.Close();
+                }
+            }
+            catch
+            {
+                MessageBox.Show("File error - check not open elsewhere");
+            }
+        }
+
+       
 
                
         
